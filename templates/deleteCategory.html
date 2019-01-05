@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Delete category</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6">
+            <a href="{{url_for('showCategory')}}"><img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Harley-Davidson.svg" id="logo" alt="logo"></a>
+        </div>
+        <div class="col-xs-6">
+            <div class="header">
+                <h1>Harley-Davidson App</h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-7">
+            <!--Form to delete category-->
+            <h4> Are you sure you want to delete {{category.name}}? </h4>
+            <form action="{{url_for('deleteCategory', category_name = category.name)}}" method = 'post'>
+                <input type='submit', value = 'Delete'>
+                <a href="{{url_for('showCategory')}}">Cancel</a>
+            </form>
+          </div>
+    <div class="col-xs-2">
+        <a href="{{url_for('showCategory')}}" class="btn btn-block btn-primary" role="button">Home</a>
+        <br>
+        <a href="{{url_for('gdisconnect')}}" class="btn btn-block btn-primary" role="button">Logout</a>
+    </div>
+    <hr>
+</body>
+</html>

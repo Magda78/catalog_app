@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')}}">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-xs-6">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Harley-Davidson.svg" id="logo" alt="logo">
+      </div>
+      <div class="col-xs-6">
+        <div class="header">
+          <h1>Harley-Davidson App</h1>
+	</div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-2">
+        <img src="/static/img/index" id="side_img">
+      </div>
+      <div class="col-xs-4">
+        <h3>Categories</h3>
+        {% for category in categories %}
+        <a href='{{url_for('showMenu',category_name=category.name)}}'>
+        <h4>{{category.name}}</h4>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="col-xs-4">
+      </div>
+      <div class="col-xs-2">
+        <a href='{{url_for('showLogin')}}'><input type="button" value="Login" class="btn btn-block"></a>
+      </div>
+    </div>
+    <hr>
+  </body>
+</html>

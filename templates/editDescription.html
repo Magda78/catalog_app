@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit item</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6">
+            <a href="{{url_for('showCategory')}}"><img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Harley-Davidson.svg" id="logo" alt="logo"></a>
+        </div>
+        <div class="col-xs-6">
+            <div class="header">
+                <h1>Harley-Davidson App</h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-7">
+            <!--Edit description form -->
+            <h4> Edit Item Description </h4>
+            <form action="{{ url_for('editMenuDes' , category_name=category_name, menu_name=menu_name, item=editedDes)}}" method = 'post'>
+	               <p>Description:</p>
+		             <input type ='text' size='30' name='description' placeholder = '{{item.description}}'>
+                 <input type='submit' value='Edit'>
+                 <a href = "{{ url_for('showMenu', category_name=category_name, category=category)}}"> Cancel </a>
+            </form>
+        </div>
+        <div class="col-xs-2">
+		        <a href="{{ url_for('showCategory', category=category )}}" class="btn btn-block btn-primary" role="button">Home</a>
+		        <br>
+            <a href="{{url_for('gdisconnect')}}" class="btn btn-block btn-primary" role="button">Logout</a>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>

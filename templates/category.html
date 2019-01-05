@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Harley-Davidson.svg" id="logo" alt="logo">
+        </div>
+        <div class="col-xs-6">
+            <div class="header">
+                <h1>Harley-Davidson App</h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-2">
+            <img src="/static/img/index" id="side_img" alt="side-img">
+        </div>
+        <div class="col-xs-4">
+            <h3>Categories</h3>
+            <hr>
+            {% for category in categories %}
+                <a href = "{{url_for('showMenu', category_name = category.name)}}"><p>{{category.name}}</p></a>
+                <p><a href = "{{url_for('editCategory',category_name = category.name)}}">Edit</a></p>
+                <p> <a href = "{{url_for('deleteCategory',category_name = category.name)}}">Delete</a> </p>
+            {% endfor %}
+        </div>
+        <div class="col-xs-4">
+		        <!--Display last added items-->
+		        <h3>Latest Items</h3>
+		        <hr>
+            {% for item in items %}
+		          <p>{{item.name}}</p>
+		        {% endfor %}
+    </div>
+    <div class="col-xs-2">
+		    <a href="{{url_for('newCategory')}}" class="btn btn-block btn-primary" role="button">Add Category</a>
+        <br>
+        <a href="{{url_for('gdisconnect')}}" class="btn btn-block btn-primary" role="button">Logout</a>
+    </div>
+  </div>
+  <hr>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body { 
+	font-family: monospace; 	
+	background-color: #ffffff; 
+	margin-top: 55px;
+	margin-left: 35px;
+	margin-right: 35px;
+	
+}
+
+.header {
+	text-align: right;
+	
+}
+
+#logo {
+	width: 20%;
+}
+
+h1 {
+	color: #000000;
+	font-family: monospace;
+	text-align: right;
+}
+h2 {
+	color: #000000;
+	font-family: monospace;
+	text-align: center;
+}
+
+.border-right {
+	border-right: 1px solid black;
+}
+
+.col-centered {
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h4,h3,p {
+	color: #000000;
+}
+
+#signinButton {
+	text-align: right; 	
+}
+
+
+
+#loginImg {
+	width: 100%;
+	
+}
+
+#menu_img {
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	width: 100%;
+}
+
+#descryption_img {
+	width: 80%;
+	
+}
+
+#side_img {
+	width: 100%;
+
+}
+
